@@ -1,0 +1,27 @@
+import acm.program.*;
+]
+	public class SecondLargest extends ConsoleProgram {
+
+	private static final int SENTINEL = 0;
+	public void run() {
+		System.out.println("This program finds the two largest integers in a");
+		System.out.println("list. Enter values, one per line, using a "
+				+ SENTINEL + " to");
+		System.out.println("signal the end of the list.");
+		int largest = -1;
+		int secondLargest = -1;
+		while (true) {
+			int input = readInt(" ? ");
+			if (input == SENTINEL) break;
+			if (input > largest) {
+				secondLargest = largest;
+				largest = input;
+			} else if (input > secondLargest) {
+				secondLargest = input;
+			}
+		}
+		System.out.println("The largest value is " + largest);
+		System.out.println("The second largest is " + secondLargest);
+	}
+}
+
